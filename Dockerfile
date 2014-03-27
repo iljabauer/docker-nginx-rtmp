@@ -1,6 +1,5 @@
 FROM ubuntu:12.04
 WORKDIR /home/nginx/
-CMD ruby start.rb
 
 RUN /sbin/ip route | awk '/default/ { print "Acquire::http::Proxy \"http://"$3":8000\";" }' > /etc/apt/apt.conf.d/30proxy
 
